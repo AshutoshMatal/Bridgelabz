@@ -1,31 +1,29 @@
 #!/bin/bash -x
 
-#CALCULATING PRIME FACTORS OF A NUMBER
 read -p "Enter the number : " number
 flag=0
 
-#FIRST FOR LOOP FOR THE POSSIBLE PRIME FACTORS
-for (( count=1; $((count*count))<=$number; count++ ))
+#  for the possible prime factor
+for (( counter=1; $((counter*counter))<=$number; counter++ ))
 do
 
-	#TO CHECK IF COUNTER IS A FACTOR
-	if [ $(($number%$count)) -eq 0 ]
+	if [ $(($number%$counter)) -eq 0 ]
 	then
 		isPrime=0
 
-		#SECOND FOR LOOP TO CHECK IF THE FACTOR IS PRIME 
-		for (( i=2; i<=$(($count/2)); i++ ))
+		# check the factor is prime
+		for (( i=2; i<=$(($counter/2)); i++ ))
 		do
-			if [ $(($count%$i)) -eq 0 ]
+			if [ $(($counter%$i)) -eq 0 ]
 			then
 				isPrime=1
 				break
 			fi
 		done
-		if [ $isPrime -eq 0 -a $count -ne 1 ]
+		if [ $isPrime -eq 0 -a $counter -ne 1 ]
 		then
 			flag=1
-			echo $count
+			echo $counter
 		fi
 	fi
 done
