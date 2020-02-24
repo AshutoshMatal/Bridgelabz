@@ -1,4 +1,3 @@
-
 max=99
 min=1000
 secondmax=99
@@ -17,8 +16,6 @@ fi
 fi
 done
 echo ${array[@]} 
-
-
 #Second min max highest
 for (( counter=1; counter<=10; counter++))
 do
@@ -31,7 +28,6 @@ then
         secondmin=${array[counter]}
 fi
 done
-
 echo  Second Minimum :$secondmin
 echo Second Maximum  :$secondmax
 
